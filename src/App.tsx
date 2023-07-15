@@ -72,8 +72,8 @@ const addGuessedLetters = useCallback((letter: string) => {
     }>
    
    <div style = {{fontSize: "2rem", textAlign: "center"}}>
-    {isWinner && "WINNER! Refresh to try again"}
-    {isLoser && "YOU LOSE! Nice Try,Refresh to try again"}
+    {isWinner && "WINNER!, Click Enter to try again"}
+    {isLoser && "YOU LOSE! Nice Try,Click Enter to try again"}
     
   </div>
     <HangmanDrawing numberOfGuesses = {incorrectLetters.length} />
