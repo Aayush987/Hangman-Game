@@ -59,6 +59,11 @@ const addGuessedLetters = useCallback((letter: string) => {
  }
   },[])
 
+  const Func = () => {
+    setguessedLetters([]) 
+      setwordToGuess(getWord())
+  }
+
    return (
     <div style={{
       minHeight: "100vh",
@@ -72,8 +77,8 @@ const addGuessedLetters = useCallback((letter: string) => {
     }>
    
    <div style = {{fontSize: "2rem", textAlign: "center"}}>
-    {isWinner && "WINNER! Refresh to try again"}
-    {isLoser && "YOU LOSE! Nice Try,Refresh to try again"}
+    {isWinner && "WINNER!, Click Button to try again"}
+    {isLoser && "YOU LOSE! Nice Try,Click Button to try again"}
     
   </div>
     <HangmanDrawing numberOfGuesses = {incorrectLetters.length} />
@@ -84,6 +89,7 @@ const addGuessedLetters = useCallback((letter: string) => {
             addGuessedLetter = {addGuessedLetters}
     />
    </div>
+   <button style = {{width: "200px", height: "100px", fontSize: "2rem", border: "5px solid black", borderRadius: "10%", backgroundColor: "#51BBFE", cursor:"pointer", fontWeight: "bolder"}} onClick={Func}>Play Again</button>
     </div>
    )
 }
