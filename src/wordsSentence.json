@@ -1,5 +1,4 @@
-{
-    "words": [
+[
       {
         "word": "jazz",
         "sentence": "Guess the word: It's a type of music with improvisation and syncopation."
@@ -168,6 +167,5 @@
         "word": "parrot",
         "sentence": "Word challenge: A type of bird with bright colors and known for imitating sounds."
       }
-    ]
-  }
+]
   

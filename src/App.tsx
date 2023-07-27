@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useState } from 'react'
-import words from './wordsSentence.json'
+import wordsData from './wordsSentence.json'
 import { HangmanDrawing } from './HangmanDrawing'
 import { HangmanWord } from './HangmanWord'
 import { Keyboard } from './Keyboard'
 
-function getRandomWordAndSentence(data: { words: string}) {
+function getRandomWordAndSentence(data: { words: { word: string; sentence: string; }[] }) {
   const randomIndex = Math.floor(Math.random() * data.words.length);
   return data.words[randomIndex];
 }
 
 function App() {
-  const [wordAndSentence, setWordAndSentence] = useState<{ word: string, sentence: string }>(getRandomWordAndSentence(words));
+  const [wordAndSentence, setWordAndSentence] = useState<{ word: string, sentence: string }>(getRandomWordAndSentence({words: wordsData}));
   const [guessedLetters, setguessedLetters] = useState<string[]>([])
   
   const wordToGuess: string = wordAndSentence.word;
@@ -35,7 +35,7 @@ const addGuessedLetters = useCallback((letter: string) => {
       if (key !== "Enter") return
     e.preventDefault()
     setguessedLetters([]) 
-    setWordAndSentence(getRandomWordAndSentence(words));
+    setWordAndSentence(getRandomWordAndSentence({words: wordsData}));
 
     }
      document.addEventListener("keypress",handler)
@@ -65,7 +65,8 @@ const addGuessedLetters = useCallback((letter: string) => {
 
   const handleRestart = () => {
     setguessedLetters([]);
-    setWordAndSentence(getRandomWordAndSentence(words));
+    setWordAndSentence(getRandomWordAndSentence(
+      {words: wordsData}));
   };
 
    return (
