@@ -82,11 +82,10 @@ const addGuessedLetters = useCallback((letter: string) => {
     }>
    
    <div style = {{fontSize: "2rem", textAlign: "center"}}>
-    {isWinner && "WINNER!, Click Button to try again"}
-    {isLoser && "YOU LOSE! Nice Try,Click Button to try again"}
-    
+    {isWinner && "WINNER!🎉🎉🎉🎉, Click Button to try again"}
+    {isLoser && "YOU LOSE😭😭😭! Nice Try,Click Button to try again"} 
   </div>
-  <div style={{ fontSize: "1.5rem", textAlign: "center", fontWeight: "bolder",border: "3px double blue" , borderRadius: "10%"}}>
+  <div style={{ fontSize: "1.5rem", textAlign: "center", fontWeight: "bolder" , borderRadius: "10px"}}>
         Sentence Clue: {sentenceToDisplay}
       </div>
     <HangmanDrawing numberOfGuesses = {incorrectLetters.length} />
